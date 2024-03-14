@@ -1,2 +1,2 @@
-##  Find Duplicate Elements 
-## Find Maximum and Minimum 
+##   Duplicate Elements 
+##  Maximum and Minimum 
