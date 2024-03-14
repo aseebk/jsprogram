@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Js program</title>
+</head>
+<body>
+
+<div>
+   <section>
+        <h2>Find Duplicate Elements</h2>
+        <h4>Enter the number and use ","</h4>
+        
+        <input type="text" id="inputNum" placeholder="Enter array elements">
+        <button onclick="findDup()">Find Duplicates</button>
+        
+        <p>Duplicate Elements: <span id="result"></span></p>
+    
+</div>
+</section>
+
+<hr>
+
+<section>
+    <h2>Find Minimum and Maximum</h2>
+    <h3>Enter the number</h3>
+    <input type="text" id="input" placeholder="Enter the number">
+    <button onclick="findMin()">Find Number</button>
+    <p id="res"></p>
+</section>
+
+<script>
+function findDup() {
+    var input = document.getElementById('inputNum').value;
+    var nums = input.split(',');
+    var result = [];
+
+    for (var i = 0; i < nums.length; i++) {
+        for (var j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j] && !result.includes(nums[i])) {
+                result.push(nums[i]);
+            }
+        }
+    }
+
+    document.getElementById('result').innerText = result.join(', ');
+}
+
+
+
+function findMin() {
+    var input = document.getElementById('input').value;
+    var numbers = input.split(',').map(Number); 
+    var min = numbers[0];
+    var max = numbers[0];
+
+    for (var i = 1; i < numbers.length; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+
+    document.getElementById('res').innerText = 'Minimum: ' + min + ', Maximum: ' + max;
+}
+
+</script>
+</body>
+</html>
